@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 /**
  * Created by romariomkk on 14.12.2016.
  */
-@WebServlet("/mainServlet")
+//@WebServlet(".mainServlet")
 public class MainServlet extends HttpServlet {
 
     Logger logger = Logger.getLogger(MainServlet.class.getSimpleName());
