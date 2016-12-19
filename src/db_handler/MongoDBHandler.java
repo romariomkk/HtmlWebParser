@@ -57,5 +57,4 @@ public class MongoDBHandler {
         return collection.find().into(new ArrayList<>());
     }
 
-
 }

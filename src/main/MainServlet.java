@@ -1,5 +1,6 @@
 package main;
 
+import db_handler.DBInsertionThread;
 import db_handler.MongoDBHandler;
 import parser.Parser;
 import parser.custom_entity.TagValuePair;
@@ -44,7 +45,8 @@ public class MainServlet extends HttpServlet {
 
         try {
             for (Future<List<TagValuePair>> future : futures) {
-                dbHandler.executeInsertion(future.get());
+                //dbHandler.executeInsertion(future.get());
+                pool.execute(new DBInsertionThread(dbHandler, future.get()));
             }
         } catch (InterruptedException | ExecutionException e) {
             logger.log(Level.WARNING, "Execution error occurred", e);
