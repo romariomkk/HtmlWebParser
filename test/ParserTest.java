@@ -1,8 +1,7 @@
-package parser;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import parser.Parser;
 import parser.custom_entity.TagValuePair;
 
 import java.net.MalformedURLException;

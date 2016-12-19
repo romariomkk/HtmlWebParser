@@ -1,5 +1,3 @@
-package main;
-
 import db_handler.MongoDBHandler;
 import org.junit.Test;
 import parser.Parser;
