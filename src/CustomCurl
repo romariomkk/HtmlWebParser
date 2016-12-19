@@ -1,0 +1,4 @@
+curl \
+--request POST \
+--data "urlN1='https://www.work.ua/'&urlN2='https://github.com/'&urlN3='https://blog.google/'"
+http:://localhost:9090/localhost:9090/HtmParse_war_exploded/

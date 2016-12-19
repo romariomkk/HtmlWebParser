@@ -1,10 +1,7 @@
-package MAIN;
+package main;
 
-import com.mongodb.BasicDBList;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 import db_handler.MongoDBHandler;
-import org.w3c.dom.Document;
+import org.junit.Test;
 import parser.Parser;
 import parser.custom_entity.TagValuePair;
 
@@ -22,7 +19,8 @@ import java.util.concurrent.Future;
  */
 public class MainClass {
 
-    public static void main(String[] args) throws MalformedURLException, ExecutionException, InterruptedException {
+    @Test
+    public void mainServletSimulation() throws MalformedURLException, ExecutionException, InterruptedException {
         MongoDBHandler dbHandler = new MongoDBHandler();
 
         URL[] url = {new URL("https://blog.google/"),
