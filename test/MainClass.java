@@ -1,3 +1,4 @@
+import db_handler.DBInsertionThread;
 import db_handler.MongoDBHandler;
 import org.junit.Test;
 import parser.Parser;
@@ -32,15 +33,18 @@ public class MainClass {
         }
 
         for (Future<List<TagValuePair>> future : futures){
-            dbHandler.executeInsertion(future.get());
+            pool.execute(new DBInsertionThread(dbHandler, future.get()));
+        }
+
+
+        if (!pool.isTerminated()) {
+            pool.shutdownNow();
         }
 
         for (URL urlElem : url){
             List<TagValuePair> list = dbHandler.retrieveCollection(urlElem.toString());
             System.out.println(list);
         }
-
-        pool.shutdownNow();
 
     }
 
